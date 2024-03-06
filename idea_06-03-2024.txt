@@ -1,0 +1,21 @@
+WEB CANSICI:
+
+SQL/USUARIS:
+	Pot tenir sql usuaris per que la gent que ja ha vingut pugui pugui tenir alguna oferat/fer algun sistema de punts
+	Tambe el usuaris poden ser per fer un xat on contactar amb els propietaris i que no hagi de ser per correu
+	El que es necesitara:
+		usuaris, contrasenya
+		correu de verifiaciio
+		restaurar contrasenya
+IA:
+	es podria tenir un asistent fet amb ia que sapigues tota la informacio i normes de la casa/negosi
+	Necesitat:
+		Aixi si algu te alguna pregunta rapida no cal que esperi resposta nostre
+		i ens treu feia
+REACT:
+	seria una manera mes facil, comoda i interactiva de fer la web
+HTML/CSS:
+	Haria d'estar ben estrocturada
+	Amb accesibilidad per tothom
+	Ferla amb etiquetes
+	i seguretat
