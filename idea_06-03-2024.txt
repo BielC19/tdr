@@ -19,3 +19,5 @@ HTML/CSS:
 	Amb accesibilidad per tothom
 	Ferla amb etiquetes
 	i seguretat
+3D:
+	Fer un 3d de la casa i ques tigui de fons girant.
