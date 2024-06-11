@@ -1,2 +1,0 @@
-- name: google-docs-to-github
-  uses: r7kamura/google-docs-to-github@v3.0.1
