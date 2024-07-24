@@ -1,13 +1,13 @@
 import React from 'react';
 import './pgpri.css';
+import Header from "./index/header";
 
 function Pgpri() {
-    return (
-    <header>
-        <h1>Can Sici</h1>
-    </header>
-    
-    );
+    return(
+    <>
+        <Header />
+    </>)
+    ;
 }
 
 export default Pgpri;
