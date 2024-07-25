@@ -1,13 +1,13 @@
 import React from 'react';
 import './header.css';
-import './../imatges/Titol.png';
 
-const TitolImg = "./../imatges/Titol.png"
+const SubTiotol = ''
 
 function Header() {
     return (
     <header>
-        <h1><img src={TitolImg} alt="Can Sici" title='Can Sici' /></h1>
+        <h1><img src={require('../imatges/Titol.png')} alt="Can Sici" title='Can Sici' /></h1>
+        <p>{SubTiotol}</p>
     </header>
     );
 }
