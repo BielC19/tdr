@@ -16,7 +16,6 @@ function Apartats({celsNum, titols, paragrafs, imgs = [], imgA = [], imgT = []}:
     var nums = []
     for (let i=1; i<=celsNum; i++) {
         nums.push(i)
-        console.log(i)
     }
 
     return(
@@ -26,7 +25,7 @@ function Apartats({celsNum, titols, paragrafs, imgs = [], imgA = [], imgT = []}:
                     <div className={"apartat " + "ap" + i}>
                         <h3>{titols}</h3>
                         <p>{paragrafs}</p>
-                        {imgs[i]? <img src={imgs[i]} alt={imgA[i]} title={imgT[i]} />: ""}
+                        {imgs[i]? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} />: ""}
                     </div>
                 )}
             </div>
@@ -35,3 +34,40 @@ function Apartats({celsNum, titols, paragrafs, imgs = [], imgA = [], imgT = []}:
 };
 
 export default Apartats;
+
+/*
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Nav from 'react-bootstrap/Nav';
+
+function NavTabsExample() {
+return (
+    <Card>
+    <Card.Header>
+        <Nav variant="tabs" defaultActiveKey="#first">
+        <Nav.Item>
+            <Nav.Link href="#first">Active</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+            <Nav.Link href="#link">Link</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+            <Nav.Link href="#disabled" disabled>
+            Disabled
+            </Nav.Link>
+        </Nav.Item>
+        </Nav>
+    </Card.Header>
+    <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>
+        With supporting text below as a natural lead-in to additional content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+    </Card.Body>
+    </Card>
+);
+}
+
+export default NavTabsExample;
+*/
