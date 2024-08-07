@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import { Interface } from 'readline';
 
@@ -14,8 +15,8 @@ function Apartats({celsNum, titols, paragrafs, imgs = [], imgA = [], imgT = []}:
 
     var numms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     var nums = []
-    for (let i=1; i<=celsNum; i++) {
-        nums.push(i)
+    for (let e=0; e<=celsNum; e++) {
+        nums.push(e)
     }
 
     return(
@@ -23,8 +24,8 @@ function Apartats({celsNum, titols, paragrafs, imgs = [], imgA = [], imgT = []}:
             <div className="apartats">
                 {nums.map((i) =>
                     <div className={"apartat " + "ap" + i}>
-                        <h3>{titols}</h3>
-                        <p>{paragrafs}</p>
+                        <h3>{titols[i]}</h3>
+                        <p>{paragrafs[i]}</p>
                         {imgs[i]? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} />: ""}
                     </div>
                 )}
@@ -35,12 +36,12 @@ function Apartats({celsNum, titols, paragrafs, imgs = [], imgA = [], imgT = []}:
 
 export default Apartats;
 
-/*
+*/
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 
-function NavTabsExample() {
+function Apartats() {
 return (
     <Card>
     <Card.Header>
@@ -69,5 +70,4 @@ return (
 );
 }
 
-export default NavTabsExample;
-*/
+export default Apartats;

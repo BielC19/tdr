@@ -1,0 +1,23 @@
+:root {
+    --interior-scroll: rgb(55, 145, 55);
+    --fons-scroll: rgb(174, 122, 54);
+}
+
+html::-webkit-scrollbar {
+    width: 13px;
+}
+html::-webkit-scrollbar-track {
+    background-color: var(--fons-scroll);
+}
+html::-webkit-scrollbar-thumb {
+    background-color: var(--interior-scroll);
+    border-radius: 20px;
+    border: 3px solid var(--fons-scroll)
+}
+html::-webkit-scrollbar-corner {
+    border-radius: 20px;
+}
+
+body {
+    background-color: darkseagreen;
+}

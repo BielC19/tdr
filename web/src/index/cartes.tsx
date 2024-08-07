@@ -1,6 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Card from '../../node_modules/react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-
+/* tot aixo ho he tret de bootsrap (de la pagina oficial) crecc quje de  (https://getbootstrap.com/docs/4.0/components/card/) */
 function KitchenSinkExample() {
 return (
     <Card style={{ width: '18rem' }}>
