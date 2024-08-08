@@ -1,6 +1,8 @@
 header{
     background-image: url(../imatges/fonsTitol.jpg);
-    height: 685px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 88vh;
     width: 100%;
     display: flex;
     flex-direction: column;

@@ -1,73 +1,47 @@
-/*
-import React from 'react';
-import { Interface } from 'readline';
+//aixo tret de (https://react-bootstrap.netlify.app/docs/components/cards/#navigation)
+import './apartats.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 interface Props{
     celsNum: number;
     titols: string[];
     paragrafs: string[];
+    keys: string[];
     imgs?: string[];
     imgA?: string[];
     imgT?: string[];
 };
 
-function Apartats({celsNum, titols, paragrafs, imgs = [], imgA = [], imgT = []}: Props) {
+function Apartats({celsNum, titols, paragrafs, keys, imgs=[], imgA=[], imgT=[]}: Props) {
 
     var numms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     var nums = []
     for (let e=0; e<=celsNum; e++) {
         nums.push(e)
     }
+    
+    function cliquear() {
+        document.getElementById('uncontrolled-tab-example-tab-casa')?.click()
+    }
+    window.onload = (event) => {
+        cliquear()
+    };
 
-    return(
-        <>
-            <div className="apartats">
-                {nums.map((i) =>
-                    <div className={"apartat " + "ap" + i}>
-                        <h3>{titols[i]}</h3>
-                        <p>{paragrafs[i]}</p>
-                        {imgs[i]? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} />: ""}
-                    </div>
-                )}
-            </div>
-        </>
-    )
-};
-
-export default Apartats;
-
-*/
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Nav from 'react-bootstrap/Nav';
-
-function Apartats() {
-return (
-    <Card>
-    <Card.Header>
-        <Nav variant="tabs" defaultActiveKey="#first">
-        <Nav.Item>
-            <Nav.Link href="#first">Active</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Nav.Link href="#link">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Nav.Link href="#disabled" disabled>
-            Disabled
-            </Nav.Link>
-        </Nav.Item>
-        </Nav>
-    </Card.Header>
-    <Card.Body>
-        <Card.Title>Special title treatment</Card.Title>
-        <Card.Text>
-        With supporting text below as a natural lead-in to additional content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-    </Card.Body>
-    </Card>
-);
+    return (
+        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
+            {nums.map((i) =>
+            <Tab className={"apartat " + "ap" + i} eventKey={keys[i]} title={titols[i]} >
+                <h3>{titols[i]}</h3>
+                <p>{paragrafs[i]}</p>
+                {imgs[i]? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} />: ""}
+                <button><a href={keys[i]}>Més informació sobre {titols[i]}</a></button>
+            </Tab>
+            )}
+        </Tabs>
+    );
 }
 
 export default Apartats;

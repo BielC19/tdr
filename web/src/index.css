@@ -1,6 +1,6 @@
 :root {
-    --interior-scroll: rgb(55, 145, 55);
-    --fons-scroll: rgb(174, 122, 54);
+    --interior-scroll: #8fbc8f;
+    --fons-scroll: #643a1f;
 }
 
 html::-webkit-scrollbar {
@@ -17,7 +17,6 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-corner {
     border-radius: 20px;
 }
-
-body {
-    background-color: darkseagreen;
+#root {
+    background-color: var(--interior-scroll);
 }
