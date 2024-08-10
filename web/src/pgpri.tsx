@@ -12,13 +12,12 @@ function Pgpri() {
     const keys = ['casa', 'aprop']
     const titols = ['La casa', 'Els voltants']
     const paragrafsts = ['blabla bla 1', 'bla bla bla 2']
-    const numApartats = titols.length
 
     return(
     <>
         <Header paragraf={paragrafH}/>
-        <Apartats celsNum={numApartats} titols={titols} paragrafs={paragrafsts} keys={keys} />
-        <Footer />
+        <Apartats titols={titols} paragrafs={paragrafsts} keys={keys} />
+        <Footer titols={titols} keys={keys} />
     </>
     );
 }

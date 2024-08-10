@@ -1,8 +1,7 @@
-:root {
-    --interior-scroll: #8fbc8f;
-    --fons-scroll: #643a1f;
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;700&display=swap');
+*{
+    font-family: 'Hanken Grotesk', sans-serif;
 }
-
 html::-webkit-scrollbar {
     width: 13px;
 }
@@ -17,6 +16,12 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-corner {
     border-radius: 20px;
 }
+
+:root {
+    --interior-scroll: #8fbc8f;
+    --fons-scroll: #643a1f;
+}
+
 #root {
     background-color: var(--interior-scroll);
 }

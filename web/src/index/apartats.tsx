@@ -6,7 +6,6 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 interface Props{
-    celsNum: number;
     titols: string[];
     paragrafs: string[];
     keys: string[];
@@ -15,11 +14,11 @@ interface Props{
     imgT?: string[];
 };
 
-function Apartats({celsNum, titols, paragrafs, keys, imgs=[], imgA=[], imgT=[]}: Props) {
-
-    var numms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+function Apartats({titols, paragrafs, keys, imgs=[], imgA=[], imgT=[]}: Props) {
+    
+    const celsNu = titols.length
     var nums = []
-    for (let e=0; e<=celsNum; e++) {
+    for (let e=0; e<=celsNu; e++) {
         nums.push(e)
     }
     
