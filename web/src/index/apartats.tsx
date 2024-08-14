@@ -24,22 +24,34 @@ function Apartats({titols, paragrafs, keys, imgs=[], imgA=[], imgT=[]}: Props) {
     
     function cliquear() {
         document.getElementById('uncontrolled-tab-example-tab-casa')?.click()
+
+        const element = document.getElementById('uncontrolled-tab-example-tab-casa');
+        element?.click();
+        element?.addEventListener('touchstart', function() {
+            element.click();
+        });
     }
+    
     window.onload = (event) => {
         cliquear()
     };
 
     return (
-        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
+        <div className='apartatss part'>
+            <div className='menu'>menu logo cansici  donar boltes a obrir i al tancar el menu</div>
+            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
             {nums.map((i) =>
             <Tab className={"apartat " + "ap" + i} eventKey={keys[i]} title={titols[i]} >
+                <div className="textApartats" id={'text' + i}>
                 <h3>{titols[i]}</h3>
                 <p>{paragrafs[i]}</p>
                 {imgs[i]? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} />: ""}
-                <button><a href={keys[i]}>Més informació sobre {titols[i]}</a></button>
+                <button className='butoinfo' id={'butoinfo' + i}><a href={'./' + keys[i]}>Més informació sobre {titols[i]}</a></button>
+                </div>
             </Tab>
             )}
-        </Tabs>
+            </Tabs>
+        </div>
     );
 }
 

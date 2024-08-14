@@ -1,0 +1,46 @@
+:root {
+    --fons-apartats: #ffe3e3;
+    --fons-apratats2: color-mix(in srgb, var(--fons-apartats) 40%, #e5ff00 60%);
+
+    --distancia-apartats: 0.25em;
+    --distancia-dintsApartas: 3.5em;
+    --radi-apartats: calc(var(--distancia-apartats)*2);
+    --fons-dintsApartats: invert(var(--fons-apartats));
+    --dist-divs: 1em;
+    --dist-p: 2em;
+}
+
+.apartatss {
+    height: auto;
+    background-color: var(--fons-apartats);
+    border-radius: var(--radi-apartats);
+    margin-top: var(--distancia-apartats);
+    padding-bottom: var(--distancia-dintsApartas);
+}
+
+.menu {
+    position: absolute;
+    margin-top: 0.5em;
+    right: 2em;
+}
+
+.textApartats {
+    margin-left: var(--dist-divs);
+    width: 99%;
+}
+.textApartats p{
+    margin-left: var(--dist-p);
+}
+.textApartats button {
+    margin-left: calc(var(--dist-p)/2);
+}
+
+.butoinfo {
+    background-color: var(--fons-apratats2);
+    border: none;
+    border-radius: var(--radi-apartats);
+}
+.butoinfo a{
+    color: white;
+    text-decoration: none;
+}

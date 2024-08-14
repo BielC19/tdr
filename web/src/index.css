@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;700&display=swap');
-*{
-    font-family: 'Hanken Grotesk', sans-serif;
+
+:root {
+    --interior-scroll: #8fbc8f;
+    --fons-scroll: #643a1f;
+    --distancia-width: calc(100% - calc(var(--distancia-apartats)*2));
+    --color-link: #cdebff;
 }
+
 html::-webkit-scrollbar {
     width: 13px;
 }
@@ -17,11 +22,33 @@ html::-webkit-scrollbar-corner {
     border-radius: 20px;
 }
 
-:root {
-    --interior-scroll: #8fbc8f;
-    --fons-scroll: #643a1f;
+*{
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+div, h1, h2, h3, h4, h5, h6, p, a, button{
+    height: fit-content;
+    width: fit-content;
+}
+a {
+    text-decoration: none;
+    color: var(--color-link);
 }
 
 #root {
     background-color: var(--interior-scroll);
+    width: 100%;
+    height: 110%;
+}
+
+.part {
+    width: var(--distancia-width);
+    margin-left: var(--distancia-apartats);
+    margin-right: var(--distancia-apartats);
+}
+
+@media screen and (max-width: 600px) {
+    #root {
+        width: 100%;
+        height: 100%;
+    }
 }

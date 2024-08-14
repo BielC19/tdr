@@ -9,9 +9,9 @@ function Pgpri() {
 
     const paragrafH = 'Can Sici. Sant Medir, Girona'
 
-    const keys = ['casa', 'aprop']
-    const titols = ['La casa', 'Els voltants']
-    const paragrafsts = ['blabla bla 1', 'bla bla bla 2']
+    const keys = ['casa', 'aprop', 'asfa', 'gsdg', '32453245']
+    const titols = ['La casa', 'Els voltants', 'asfa', 'gsdg', '32453245']
+    const paragrafsts = ['blabla bla 1', 'bla bla bla 2', 'asfa', 'gsdg', '32453245']
 
     return(
     <>
