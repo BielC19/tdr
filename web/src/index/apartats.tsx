@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import Logo from '../imatges/Logo.png'
 
 interface Props{
     titols: string[];
@@ -31,14 +32,20 @@ function Apartats({titols, paragrafs, keys, imgs=[], imgA=[], imgT=[]}: Props) {
             element.click();
         });
     }
+    function div() {
+        var div = document.createElement('li');
+        div.innerHTML = '<div class=\'menu\'><img src=\'./Logo.png\' alt="Logo" /></div>';
+        div.setAttribute('class', 'nav-item'); 
+        document.getElementById('uncontrolled-tab-example')?.appendChild(div);
+    }
     
     window.onload = (event) => {
         cliquear()
+        div()
     };
 
     return (
         <div className='apartatss part'>
-            <div className='menu'>menu logo cansici  donar boltes a obrir i al tancar el menu</div>
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
             {nums.map((i) =>
             <Tab className={"apartat " + "ap" + i} eventKey={keys[i]} title={titols[i]} >
@@ -51,6 +58,7 @@ function Apartats({titols, paragrafs, keys, imgs=[], imgA=[], imgT=[]}: Props) {
             </Tab>
             )}
             </Tabs>
+            
         </div>
     );
 }

@@ -6,21 +6,27 @@ footer {
     background-color: var(--fons-footer);
     color: #ffffff;
     margin-top: var(--distancia-apartats);
-    padding-top: var(--distancia-dintsApartas);
-    padding-bottom: var(--distancia-dintsApartas - 1em);
+    padding-top: calc(var(--distancia-dintsApartas)/2);
+    padding-bottom: ;
     border-radius: var(--radi-apartats) var(--radi-apartats) 0 0;
 }
 
+footer .textApartats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .top {
-    width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(2, 25%);
     justify-content: space-between;
     justify-items: center;
 }
 
-.Fesquerra {
-
+.Fesquerra h6{
+    font-size: 18px;
 }
 .Fesquerra ul {
     height: 5em;
@@ -35,6 +41,10 @@ footer {
 .Fdreta {
     display: flex;
     flex-direction: column;
+    padding-top: 1em;
+}
+.Fdreta a {
+    margin-top: 0.2em;
 }
 
 a {
@@ -42,9 +52,19 @@ a {
     color: var(--color-link);
 }
 
-.sot
-a {
-
+.sota {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: calc(var(--distancia-dintsApartas) - 2.8em);
+}
+.sota img {
+    height: 3em;
+    width: auto;
 }
 .sota p:nth-child(2) {
     margin: 0;

@@ -23,6 +23,18 @@
     margin-top: 0.5em;
     right: 2em;
 }
+.menu:active{
+    animation: spinHorizontal .4s infinite linear;
+}
+.menu img {
+    width: 1.3em;
+    height: auto;
+}
+@keyframes spinHorizontal {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 .textApartats {
     margin-left: var(--dist-divs);
