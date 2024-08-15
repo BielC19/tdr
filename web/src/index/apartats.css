@@ -23,16 +23,31 @@
     margin-top: 0.5em;
     right: 2em;
 }
-.menu:active{
-    animation: spinHorizontal .4s infinite linear;
+.menu:hover{
+    -moz-animation: rotacioMenu2 6s infinite linear;
+    -o-animation: rotacioMenu2 6s infinite linear;    
+    -webkit-animation: rotacioMenu2 6s infinite linear;
+    animation:  6s linear infinite rotacioMenu2;
+}
+.anumacioo{
+    -moz-animation: rotacioMenu .8s infinite linear;
+    -o-animation: rotacioMenu .8s infinite linear;    
+    -webkit-animation: rotacioMenu .8s infinite linear;
+    animation:  .8s both rotacioMenu;
+    animation-iteration-count: 1;
 }
 .menu img {
     width: 1.3em;
     height: auto;
 }
-@keyframes spinHorizontal {
+@keyframes rotacioMenu {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+@keyframes rotacioMenu2 {
+    0% {transform: rotate(0deg);}
+    90% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
 }
 
 

@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Logo from '../imatges/Logo.png'
+import { Button } from 'react-bootstrap';
 
 interface Props{
     titols: string[];
@@ -32,10 +33,14 @@ function Apartats({titols, paragrafs, keys, imgs=[], imgA=[], imgT=[]}: Props) {
             element.click();
         });
     }
+    function animacioo() {
+        document.getElementById('menu')?.setAttribute('class', 'anumacioo')
+    }
     function div() {
         var div = document.createElement('li');
-        div.innerHTML = '<div class=\'menu\'><img src=\'./Logo.png\' alt="Logo" /></div>';
-        div.setAttribute('class', 'nav-item'); 
+        div.innerHTML = '<div id=\'menu\' class=\'menu\'><button onClick=\"this.className+=\' anumacioo\'\"><img src=\'./Logo.png\' alt="Logo" /></button></div>';
+        div.setAttribute('class', 'nav-item');
+        div.setAttribute('role', 'presentation')
         document.getElementById('uncontrolled-tab-example')?.appendChild(div);
     }
     
