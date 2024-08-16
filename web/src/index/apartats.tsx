@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import React, { useEffect } from 'react';
+import Logo from '../imatges/Logo.png'
 
 interface Props {
     titols: string[];
@@ -58,9 +59,16 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
 
             liElement.innerHTML = `
                 <div id="menu" class="menu">
-                    <button class="bttto" id="bttto">
+                    <button class="bttto" id="bttto" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
                         <img src="./Logo.png" alt="Logo" />
                     </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
                 </div>
             `;
 

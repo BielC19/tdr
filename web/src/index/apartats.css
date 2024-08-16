@@ -43,7 +43,10 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
+.bttas img {
+    width: 1.3em;
+    height: auto;
+}
 
 
 .textApartats {
