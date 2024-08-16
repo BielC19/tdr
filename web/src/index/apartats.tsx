@@ -57,18 +57,10 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
             liElement.setAttribute('role', 'presentation');
 
             liElement.innerHTML = `
-                <div id="menu" class="menu ">
-                <button id='bttto' type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="./Logo.png" alt="Menu" />
+                <div id="menu" class="menu">
+                    <button class="bttto" id="bttto">
+                        <img src="./Logo.png" alt="Logo" />
                     </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                    </div>
                 </div>
             `;
 
@@ -84,16 +76,6 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
 
     return (
         <div className='apartatss part'>
-            <div className="dropdown">
-            <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown link
-                </a>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
-                    <a className="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
                 {nums.map((i) =>
                     <Tab className={"apartat " + "ap" + i} eventKey={keys[i]} title={titols[i]} key={i}>

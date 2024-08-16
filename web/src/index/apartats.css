@@ -23,12 +23,6 @@
     margin-top: 0.5em;
     right: 2em;
 }
-{
-    -moz-animation: rotacioMenu2 1s infinite linear;
-    -o-animation: rotacioMenu2 1s infinite linear;    
-    -webkit-animation: rotacioMenu2 1s infinite linear;
-    animation:  1s linear infinite rotacioMenu2;
-}
 .actiu{
     -moz-animation: rotacioMenu .8s infinite linear;
     -o-animation: rotacioMenu .8s infinite linear;    
@@ -49,10 +43,7 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-@keyframes rotacioMenu2 {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-}
+
 
 
 .textApartats {
