@@ -4,10 +4,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import Logo from '../imatges/Logo.png'
-import { Button } from 'react-bootstrap';
+import React, { useEffect } from 'react';
 
-interface Props{
+interface Props {
     titols: string[];
     paragrafs: string[];
     keys: string[];
@@ -16,54 +15,98 @@ interface Props{
     imgT?: string[];
 };
 
-function Apartats({titols, paragrafs, keys, imgs=[], imgA=[], imgT=[]}: Props) {
+function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: Props) {
     
-    const celsNu = titols.length
-    var nums = []
-    for (let e=0; e<=celsNu; e++) {
-        nums.push(e)
-    }
-    
-    function cliquear() {
-        document.getElementById('uncontrolled-tab-example-tab-casa')?.click()
+    const celsNu = titols.length;
+    const nums = Array.from(Array(celsNu).keys());
+    var sadra = 0
 
+    useEffect(() => {
+        cliquear();
+        if (sadra==0) {
+            crearDiv(); // Create the custom div after the component mounts
+        }
+    }, []); // This effect runs only once when the component is mounted
+
+
+    function cliquear() {
         const element = document.getElementById('uncontrolled-tab-example-tab-casa');
         element?.click();
-        element?.addEventListener('touchstart', function() {
-            element.click();
-        });
     }
+
     function animacioo() {
-        document.getElementById('menu')?.setAttribute('class', 'anumacioo')
+        const element = document.getElementById('bttto');
+        if (element) {
+            element.onmousedown = function() {
+                element.classList.add('actiu');
+            };
+            
+            element.onmouseup = function() {
+                setTimeout(() => {
+                    element.classList.remove('actiu');
+                    // Altres accions que vols executar després de 3 segons
+                }, 1000); // 1 segons de retard després del mouseup
+            };
+        }
     }
-    function div() {
-        var div = document.createElement('li');
-        div.innerHTML = '<div id=\'menu\' class=\'menu\'><button onClick=\"this.className+=\' anumacioo\'\"><img src=\'./Logo.png\' alt="Logo" /></button></div>';
-        div.setAttribute('class', 'nav-item');
-        div.setAttribute('role', 'presentation')
-        document.getElementById('uncontrolled-tab-example')?.appendChild(div);
+    function crearDiv() {
+        const ulElement = document.getElementById('uncontrolled-tab-example');
+        if (ulElement) {
+            const liElement = document.createElement('li');
+            liElement.className = 'nav-item';
+            liElement.setAttribute('role', 'presentation');
+
+            liElement.innerHTML = `
+                <div id="menu" class="menu ">
+                <button id='bttto' type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="./Logo.png" alt="Menu" />
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                    </div>
+                </div>
+            `;
+
+            // Add event listener for the button click
+            const button = liElement.querySelector('button');
+            button?.addEventListener('mousedown', animacioo);
+
+            // Append the new `li` to the `ul`
+            ulElement.appendChild(liElement);
+            sadra += 1
+        }
     }
-    
-    window.onload = (event) => {
-        cliquear()
-        div()
-    };
 
     return (
         <div className='apartatss part'>
-            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
-            {nums.map((i) =>
-            <Tab className={"apartat " + "ap" + i} eventKey={keys[i]} title={titols[i]} >
-                <div className="textApartats" id={'text' + i}>
-                <h3>{titols[i]}</h3>
-                <p>{paragrafs[i]}</p>
-                {imgs[i]? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} />: ""}
-                <button className='butoinfo' id={'butoinfo' + i}><a href={'./' + keys[i]}>Més informació sobre {titols[i]}</a></button>
+            <div className="dropdown">
+            <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+                </a>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a className="dropdown-item" href="#">Action</a>
+                    <a className="dropdown-item" href="#">Another action</a>
+                    <a className="dropdown-item" href="#">Something else here</a>
                 </div>
-            </Tab>
-            )}
+            </div>
+            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
+                {nums.map((i) =>
+                    <Tab className={"apartat " + "ap" + i} eventKey={keys[i]} title={titols[i]} key={i}>
+                        <div className="textApartats" id={'text' + i}>
+                            <h3>{titols[i]}</h3>
+                            <p>{paragrafs[i]}</p>
+                            {imgs[i] ? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} /> : ""}
+                            <button className='butoinfo' id={'butoinfo' + i}><a href={'./' + keys[i]}>Més informació sobre {titols[i]}</a></button>
+                        </div>
+                    </Tab>
+                )}
+                
             </Tabs>
-            
         </div>
     );
 }

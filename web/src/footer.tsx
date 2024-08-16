@@ -22,7 +22,7 @@ function Footer({titols, keys}:Props) {
 
     return (
         <>
-        <footer className='part'>
+        <footer className=''>
             <div className="textApartats">
                 <div className="top">
                     <div className="Fesquerra">
@@ -45,6 +45,7 @@ function Footer({titols, keys}:Props) {
                         </svg> +34 607072095</a>
                     </div>
                 </div>
+                <hr />
                 <div className="sota">
                     <select name="Idiomes" title="Idiomes" id="idiomes"><option value="cat"><img src={banderacat} />🇦🇩 Catalá</option><option value="eng">🇬🇧 English</option><option value="fr">🇫🇷 Françes</option><option value="es">🇪🇸 Español</option></select>
                     <span><img src={logo} alt="Logo Cansici" /></span>

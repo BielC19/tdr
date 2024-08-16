@@ -7,14 +7,16 @@ footer {
     color: #ffffff;
     margin-top: var(--distancia-apartats);
     padding-top: calc(var(--distancia-dintsApartas)/2);
-    padding-bottom: ;
     border-radius: var(--radi-apartats) var(--radi-apartats) 0 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 footer .textApartats {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 0;
 }
 
 .top {
@@ -52,6 +54,10 @@ a {
     color: var(--color-link);
 }
 
+.textApartats hr {
+    width: 100%;
+}
+
 .sota {
     height: auto;
     width: 100%;
@@ -62,6 +68,7 @@ a {
     padding-top: 1em;
     padding-bottom: calc(var(--distancia-dintsApartas) - 2.8em);
 }
+
 .sota img {
     height: 3em;
     width: auto;
@@ -70,3 +77,25 @@ a {
     margin: 0;
 }
 
+@media screen and (max-width: 1000px) {
+    footer, footer .textApartats, footer .top {
+        flex-direction: column;
+    }
+    footer .top {
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 25%);
+    }
+    footer .Fdreta {
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: repeat(2,60%);
+        justify-content: space-between;
+        justify-items: left
+    }
+    footer .textApartats .sota{
+        margin-left: 0;
+        position: relative;
+        left: -1em;
+        padding-bottom: 2em;
+    }
+}
