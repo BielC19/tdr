@@ -6,8 +6,8 @@ interface Props {
 }
 function Header({paragraf}: Props) {
     return (
-    <header className='part' id='HH'>
-        <h1><img src={require('../imatges/Titol.png')} alt="Can Sici" title='Can Sici' /></h1>
+    <header className='' id='HH'>
+        <h1><img src={require('../imatges/Titol.png')} alt="Can Sici" title='Can Sici' />Can Sici</h1>
         <p>{paragraf}</p>
     </header>
     );

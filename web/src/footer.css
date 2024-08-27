@@ -3,13 +3,20 @@
 }
 footer {
     height: auto;
+    width: 100%;
     background-color: var(--fons-footer);
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radi-apartats) var(--radi-apartats) 0 0;
     margin-top: var(--distancia-apartats);
     padding-top: calc(var(--distancia-dintsApartas)/2);
-    border-radius: var(--radi-apartats) var(--radi-apartats) 0 0;
     margin-left: 0;
     margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 footer .textApartats {
@@ -20,33 +27,66 @@ footer .textApartats {
 }
 
 .top {
-    width: 90%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 25%);
+    grid-template-columns: repeat(2, 50%);
     justify-content: space-between;
-    justify-items: center;
+    justify-items: end;
+}
+.F {
+    display: grid;
+    grid-row: repart(2, 10% 90%);
 }
 
-.Fesquerra h6{
-    font-size: 18px;
-}
-.Fesquerra ul {
-    height: 5em;
+.Fdreta{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 3em;
 }
-.Fesquerra li {
-    margin-right: 4em;
+.Fdreta div {
+    display: grid;
+    grid-template-rows: repeat(2);
+    margin-right: 2em;
 }
-
-.Fdreta {
-    display: flex;
-    flex-direction: column;
-    padding-top: 1em;
+.Fdreta h6 {
+    margin-right: 1em;
+}
+#petit {
+    height: 24px;
+    width: 24px;
+}
+.Fdreta svg {
+    height: 18px;
+    width: 18px;
 }
 .Fdreta a {
-    margin-top: 0.2em;
+    font-size: 16px;
+}
+
+.Fesquerra {
+    width: 100%;
+    padding-top: 1em;
+    padding-left: 1em;
+}
+footer h6{
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.Fesquerra ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.Fesquerra li {
+    margin: 0;
+    padding: 0;
+}
+.Fesquerra a {
+    margin-left: 1em;
 }
 
 a {
@@ -54,13 +94,30 @@ a {
     color: var(--color-link);
 }
 
-.textApartats hr {
-    width: 100%;
+.textApartatsF {
+    margin-left: var(--dist-divs);
+    width: 98%;
 }
+
+.mitggasa {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.mitggasa hr{
+    width: 50%;
+}
+.mitggasa img {
+    height: 3em;
+    width: auto;
+    margin: 0 2em 0 2em;
+}
+
 
 .sota {
     height: auto;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -69,16 +126,12 @@ a {
     padding-bottom: calc(var(--distancia-dintsApartas) - 2.8em);
 }
 
-.sota img {
-    height: 3em;
-    width: auto;
-}
 .sota p:nth-child(2) {
     margin: 0;
 }
-
+/* REVISAR TOT
 @media screen and (max-width: 1000px) {
-    footer, footer .textApartats, footer .top {
+    footer, .textApartatsF, footer .top {
         flex-direction: column;
     }
     footer .top {
@@ -87,15 +140,17 @@ a {
     }
     footer .Fdreta {
         margin-top: 2em;
-        display: grid;
-        grid-template-columns: repeat(2,60%);
+        display: flex;
+        flex-direction: row;
+        /*grid-template-columns: repeat(2,60%);*
         justify-content: space-between;
-        justify-items: left
+        justify-items: left;
     }
-    footer .textApartats .sota{
+    .textApartatsF .sota{
         margin-left: 0;
         position: relative;
         left: -1em;
         padding-bottom: 2em;
     }
 }
+    */

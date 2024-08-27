@@ -1,0 +1,26 @@
+:root {
+    --fons-apartat1: #0000ff5d;
+    --fons-apartat2: #00a6ff5d;
+    --fons-apartat3: #00ff1e5d;
+    --fons-apartat4: #ff00ff5d;
+    --fons-apartat5: #ff95005d;
+    --fons-apartat6: #00ffd95d;
+    --fons-apartat7: #ff00005d;
+    --fons-apartat8: #ff00445d;
+    --fons-apartat9: #fbff005d;
+}
+
+$keys: 'casa', 'aprop', 'asfa', 'gsdg', '32453245';
+
+@for $i from 1 through length($keys) {
+    $key: nth($keys, $i);
+
+    #text#{$i} {
+        background-color: var(--fons-apartat#{$i});
+        margin-top: 0;
+    }
+    #uncontrolled-tab-example-tab-#{$key} {
+        background-color: var(--fons-apartat#{$i});
+    }
+}
+#text1 {border-top-left-radius: 0 !important;}

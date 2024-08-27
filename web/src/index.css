@@ -2,7 +2,7 @@
 
 :root {
     --interior-scroll: #8fbc8f;
-    --fons-scroll: #643a1f;
+    --fons-scroll: #1919199b;
     --distancia-width: calc(100% - calc(var(--distancia-apartats)*2));
     --color-link: #cdebff;
 }
@@ -25,10 +25,7 @@ html::-webkit-scrollbar-corner {
 *{
     font-family: 'Hanken Grotesk', sans-serif;
 }
-div, h1, h2, h3, h4, h5, h6, p, a, button{
-    height: fit-content;
-    width: fit-content;
-}
+
 a {
     text-decoration: none;
     color: var(--color-link);

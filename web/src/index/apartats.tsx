@@ -2,10 +2,11 @@
 import './apartats.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../loops.scss'
+import Menu from '../menu'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import React, { useEffect } from 'react';
-import Logo from '../imatges/Logo.png'
+import React, { useEffect, useState } from 'react';
 
 interface Props {
     titols: string[];
@@ -24,9 +25,7 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
 
     useEffect(() => {
         cliquear();
-        if (sadra==0) {
-            crearDiv(); // Create the custom div after the component mounts
-        }
+
     }, []); // This effect runs only once when the component is mounted
 
 
@@ -35,68 +34,35 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
         element?.click();
     }
 
-    function animacioo() {
-        const element = document.getElementById('bttto');
-        if (element) {
-            element.onmousedown = function() {
-                element.classList.add('actiu');
-            };
-            
-            element.onmouseup = function() {
-                setTimeout(() => {
-                    element.classList.remove('actiu');
-                    // Altres accions que vols executar després de 3 segons
-                }, 1000); // 1 segons de retard després del mouseup
-            };
+//tambe puc posar q convii de color el fons del h3 i el p i ferlo mes gran pq ocupi tot el que pugui
+    function text0(num: number) {
+    var numApartat = 0
+    const apartat = document.getElementsByClassName('apartatss')[0]
+    const elemnt = document.getElementById('uncontrolled-tab-example-tab-' + keys[num])
+        if (apartat && elemnt && num == 0) {
+            elemnt.classList.remove('text'+numApartat)
+            apartat.classList.remove('text'+numApartat)
+            elemnt.classList.add('text'+num);
+            apartat.classList.add('text'+num);
         }
-    }
-    function crearDiv() {
-        const ulElement = document.getElementById('uncontrolled-tab-example');
-        if (ulElement) {
-            const liElement = document.createElement('li');
-            liElement.className = 'nav-item';
-            liElement.setAttribute('role', 'presentation');
-
-            liElement.innerHTML = `
-                <div id="menu" class="menu">
-                    <button class="bttto" id="bttto" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                        <img src="./Logo.png" alt="Logo" />
-                    </button>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
-                    </ul>
-                </div>
-            `;
-
-            // Add event listener for the button click
-            const button = liElement.querySelector('button');
-            button?.addEventListener('mousedown', animacioo);
-
-            // Append the new `li` to the `ul`
-            ulElement.appendChild(liElement);
-            sadra += 1
-        }
-    }
+        
+    };
 
     return (
         <div className='apartatss part'>
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
                 {nums.map((i) =>
                     <Tab className={"apartat " + "ap" + i} eventKey={keys[i]} title={titols[i]} key={i}>
-                        <div className="textApartats" id={'text' + i}>
+                        <div className="textApartats" id={'text' + (i+1)}>
                             <h3>{titols[i]}</h3>
                             <p>{paragrafs[i]}</p>
                             {imgs[i] ? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} /> : ""}
-                            <button className='butoinfo' id={'butoinfo' + i}><a href={'./' + keys[i]}>Més informació sobre {titols[i]}</a></button>
+                            <button className='butoinfo' id={'butoinfo' + i}><a href={'./' + keys[i] + '/'}>Més informació sobre {titols[i]}</a></button>
                         </div>
                     </Tab>
                 )}
-                
             </Tabs>
+                <Menu />
         </div>
     );
 }

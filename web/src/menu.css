@@ -1,0 +1,38 @@
+.menu {
+    position: absolute;
+    top: 675px;
+    margin-top: 0.5em;
+    right: 2em;
+}
+.actiu{
+    -moz-animation: rotacioMenu .8s infinite linear;
+    -o-animation: rotacioMenu .8s infinite linear;    
+    -webkit-animation: rotacioMenu .8s infinite linear;
+    animation:  .8s both rotacioMenu;
+    animation-iteration-count: 1;
+}
+@keyframes rotacioMenu {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.bttto img {
+    width: 1.3em;
+    height: auto;
+}
+#bttto {
+    color: transparent;
+    background-color: transparent;
+    border: none;
+}
+.mmenu {
+    --bs-dropdown-bg: blue;
+}
+
+#ultimmM{
+    display: flex;
+    flex-direction: row;
+}
+#ultimmM span {
+    margin-right: 0.5em;
+    margin-left: 0.7em;
+}

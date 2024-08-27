@@ -1,0 +1,109 @@
+:root{
+    --fons-footer: #a0a0a093;
+}
+footer {
+    height: auto;
+    width: 100%;
+    background-color: var(--fons-footer);
+    color: #ffffff;
+    margin-top: var(--distancia-apartats);
+    padding-top: calc(var(--distancia-dintsApartas)/2);
+    border-radius: var(--radi-apartats) var(--radi-apartats) 0 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+footer .textApartats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+}
+
+.top {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.Fesquerra h6{
+    font-size: 18px;
+}
+.Fesquerra ul {
+    height: 5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.Fesquerra li {
+    margin-right: 4em;
+}
+
+.Fdreta {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+}
+.Fdreta a {
+    margin-top: 0.2em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+}
+
+.textApartatsF {
+    margin-left: var(--dist-divs);
+    width: 98%;
+}
+.textApartatsF hr {
+    width: 95%;
+}
+
+
+
+.sota {
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: calc(var(--distancia-dintsApartas) - 2.8em);
+}
+
+.sota img {
+    height: 3em;
+    width: auto;
+}
+.sota p:nth-child(2) {
+    margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    footer, .textApartatsF, footer .top {
+        flex-direction: column;
+    }
+    footer .top {
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 25%);
+    }
+    footer .Fdreta {
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: repeat(2,60%);
+        justify-content: space-between;
+        justify-items: left
+    }
+    .textApartatsF .sota{
+        margin-left: 0;
+        position: relative;
+        left: -1em;
+        padding-bottom: 2em;
+    }
+}
