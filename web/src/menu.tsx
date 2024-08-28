@@ -1,7 +1,6 @@
 //aixo tret de (https://react-bootstrap.netlify.app/docs/components/cards/#navigation)
 import './menu.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 

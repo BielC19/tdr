@@ -62,7 +62,7 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
                     </Tab>
                 )}
             </Tabs>
-                <Menu />
+            <Menu />
         </div>
     );
 }

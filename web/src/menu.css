@@ -1,4 +1,4 @@
-.menu {
+.apartatss .menu {
     position: absolute;
     top: 675px;
     margin-top: 0.5em;
@@ -15,10 +15,15 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-.bttto img {
+.apartatss .bttto img {
     width: 1.3em;
     height: auto;
 }
+.apartatssM .bttto img {
+    width: 1.6em;
+    height: auto;
+}
+
 #bttto {
     color: transparent;
     background-color: transparent;

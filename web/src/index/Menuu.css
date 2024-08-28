@@ -1,3 +1,14 @@
+.apartatssM {
+    padding: 1em;
+}
+
 #MenuuM {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 0 !important;
+}
+.apartatssM ul div{
+    display: flex;
+    flex-direction: row;
 }
