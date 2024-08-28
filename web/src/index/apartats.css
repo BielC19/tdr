@@ -22,7 +22,8 @@
 .apartatss #uncontrolled-tab-example {
     border-radius: 5px;
     margin-bottom: 0 !important;
-
+    border-bottom: 2px !important;
+    border-color: #f0ffff;
 }
 
 

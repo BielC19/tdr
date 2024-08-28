@@ -1,7 +1,10 @@
 import { logDOM } from '@testing-library/react';
 import './footer.css';
+import { Link } from 'react-router-dom';
+
 import banderacat from './imatges/banderacat.svg'
 import logo from './imatges/Logo.png'
+
 interface Props{
     titols: string[];
     keys: string[];
@@ -19,8 +22,7 @@ function Footer({titols, keys}:Props) {
 
     const url = window.location.pathname
     const url2 = window.location.pathname.split('/')
-    console.log(url)
-    console.log(url2)
+
 
     return (
         <>
@@ -30,7 +32,7 @@ function Footer({titols, keys}:Props) {
                         <h6>Apartats:</h6>
                         <ul className={'LLisapart'}>
                             {nums.map((i) => 
-                            <li className={'llisapart '+keys[i]}><a href={'./' + keys[i] + '/'}>{titols[i]}</a></li>
+                            <li className={'llisapart '+keys[i]}><Link to={'./' + keys[i] + '/'}>{titols[i]}</Link></li>
                             )}
                         </ul>
                     </div>

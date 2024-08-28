@@ -21,6 +21,10 @@ $keys: 'casa', 'aprop', 'asfa', 'gsdg', '32453245';
     }
     #uncontrolled-tab-example-tab-#{$key} {
         background-color: var(--fons-apartat#{$i});
+        border-color: #0000000f;
+    }
+    #uncontrolled-tab-example-tab-#{$key}:hover, #uncontrolled-tab-example-tab-#{$key}:focus {
+        border-color: #0000005d;
     }
 }
 #text1 {border-top-left-radius: 0 !important;}

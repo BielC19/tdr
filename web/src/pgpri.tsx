@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './pgpri.css';
 import Header from "./index/header";
 import Apartats from "./index/apartats";

@@ -7,6 +7,7 @@ import Menu from '../menu'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Props {
     titols: string[];
@@ -36,16 +37,15 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
 
 //tambe puc posar q convii de color el fons del h3 i el p i ferlo mes gran pq ocupi tot el que pugui
     function text0(num: number) {
-    var numApartat = 0
-    const apartat = document.getElementsByClassName('apartatss')[0]
-    const elemnt = document.getElementById('uncontrolled-tab-example-tab-' + keys[num])
-        if (apartat && elemnt && num == 0) {
+        var numApartat = 0
+        const apartat = document.getElementsByClassName('apartatss')[0]
+        const elemnt = document.getElementById('uncontrolled-tab-example-tab-' + keys[num])
+        if (apartat && elemnt && num === 0) {
             elemnt.classList.remove('text'+numApartat)
             apartat.classList.remove('text'+numApartat)
             elemnt.classList.add('text'+num);
             apartat.classList.add('text'+num);
         }
-        
     };
 
     return (
@@ -57,7 +57,7 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
                             <h3>{titols[i]}</h3>
                             <p>{paragrafs[i]}</p>
                             {imgs[i] ? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} /> : ""}
-                            <button className='butoinfo' id={'butoinfo' + i}><a href={'./' + keys[i] + '/'}>Més informació sobre {titols[i]}</a></button>
+                            <button className='butoinfo' id={'butoinfo' + i}><Link to={'./' + keys[i] + '/'}>Més informació sobre {titols[i]}</Link></button>
                         </div>
                     </Tab>
                 )}
