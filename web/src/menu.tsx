@@ -18,14 +18,14 @@ interface Props {
 
 function Menu({  }: Props) {
     const [color, setColor] = useState<string>('#8fbc8f'); // Valor inicial
-
     const root = document.documentElement;;
+
     const url = window.location.pathname.split('/');
     console.log(url);
     const es = url[1] == 'es';
     const fr = url[1] == 'fr';
     const en = url[1] == 'en';
-    const ca = es && fr && en || url[1] == null || url[1] == 'undefined' || url[1] == '';
+    const ca = (!es || !fr || !en) && !(url[1] == 'undefined');
 
     var conttat = 0
 
@@ -89,7 +89,7 @@ function Menu({  }: Props) {
                 <img src={Logo} alt="Logo" />
             </button>
             <ul id="mmenu" className="dropdown-menu">
-                {ca ? '' : <li><Link className="dropdown-item" to={'/' + url[-2]}><img src={BanseraCA} alt="Bandera" width={16} height={11} /> Catalá</Link></li> }
+                {ca ? <li><Link className="dropdown-item" to={'/' + url[-2]}><img src={BanseraCA} alt="Bandera" width={16} height={11} /> Catalá</Link></li> : '' }
                 {es ? '' : <li><Link className="dropdown-item" to={'/es/' + url[-2]}><img src={BanseraES} alt="Bandera" width={16} height={11} />Español</Link></li> }
                 {fr ? '' : <li><Link className="dropdown-item" to={'/fr/' + url[-2]}><img src={BanseraFR} alt="Bandera" width={16} height={11} />French</Link></li> }
                 {en ? '' : <li><Link className="dropdown-item" to={'/en/' + url[-2]}><img src={BanseraEN} alt="Bandera" width={16} height={11} />English</Link></li> }

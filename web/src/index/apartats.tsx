@@ -57,7 +57,7 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
                             <h3>{titols[i]}</h3>
                             <p>{paragrafs[i]}</p>
                             {imgs[i] ? <img src={require(imgs[i])} alt={imgA[i]} title={imgT[i]} /> : ""}
-                            <button className='butoinfo' id={'butoinfo' + i}><Link to={'./' + keys[i] + '/'}>Més informació sobre {titols[i]}</Link></button>
+                            <button className='butoinfo' id={'butoinfo' + i}><Link to={`/${keys[i]}`}>Més informació sobre {titols[i]}</Link></button>
                         </div>
                     </Tab>
                 )}

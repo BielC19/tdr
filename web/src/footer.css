@@ -129,6 +129,9 @@ a {
 .sota p:nth-child(2) {
     margin: 0;
 }
+#btttoF {
+
+}
 /* REVISAR TOT
 @media screen and (max-width: 1000px) {
     footer, .textApartatsF, footer .top {

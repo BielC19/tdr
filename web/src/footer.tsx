@@ -1,9 +1,13 @@
-import { logDOM } from '@testing-library/react';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './footer.css';
 import { Link } from 'react-router-dom';
 
-import banderacat from './imatges/banderacat.svg'
 import logo from './imatges/Logo.png'
+import BanseraCA from './imatges/banderacat.png';
+import BanseraES from './imatges/banderaes.svg';
+import BanseraFR from './imatges/banderafr.svg';
+import BanseraEN from './imatges/banderaeng.svg';
 
 interface Props{
     titols: string[];
@@ -20,8 +24,12 @@ function Footer({titols, keys}:Props) {
         nums.push(e)
     }
 
-    const url = window.location.pathname
-    const url2 = window.location.pathname.split('/')
+    const url = window.location.pathname.split('/');
+    console.log(url);
+    const es = url[1] == 'es';
+    const fr = url[1] == 'fr';
+    const en = url[1] == 'en';
+    const ca = (!es || !fr || !en) && !(url[1] == 'undefined');
 
 
     return (
@@ -50,7 +58,17 @@ function Footer({titols, keys}:Props) {
                 </div>
                 <div className="mitggasa"> <hr /> <span><img src={logo} alt="Logo Cansici" /></span> <hr /> </div>
                 <div className="sota">
-                    <select name="Idiomes" title="Idiomes" id="idiomes"><option value="cat"><img src={banderacat} />🇦🇩 Catalá</option><option value="eng">🇬🇧 English</option><option value="fr">🇫🇷 Français</option><option value="es">🇪🇸 Español</option></select>
+                <div id="menuF" className="menuF">
+            <button className="btttoF" id="btttoF" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                Idiomes
+            </button>
+            <ul id="mmenu" className="dropdown-menu">
+                {ca ? <li><Link className="dropdown-item" to={'/' + url[-2]}><img src={BanseraCA} alt="Bandera" width={16} height={11} /> Catalá</Link></li> : '' }
+                {es ? '' : <li><Link className="dropdown-item" to={'/es/' + url[-2]}><img src={BanseraES} alt="Bandera" width={16} height={11} />Español</Link></li> }
+                {fr ? '' : <li><Link className="dropdown-item" to={'/fr/' + url[-2]}><img src={BanseraFR} alt="Bandera" width={16} height={11} />French</Link></li> }
+                {en ? '' : <li><Link className="dropdown-item" to={'/en/' + url[-2]}><img src={BanseraEN} alt="Bandera" width={16} height={11} />English</Link></li> }
+            </ul>
+        </div>
                     
                     <p>&copy; 2024 Cansici</p>
                 </div>

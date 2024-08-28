@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './pgpri.css';
 import Header from "./index/header";
 import Apartats from "./index/apartats";
-import Cartes from './index/cartes'
 import Footer from "./footer";
+import Casa from './index/casa'
 
 function Pgpri() {
 
@@ -14,12 +14,15 @@ function Pgpri() {
     const titols = ['La casa', 'Els voltants', 'asfa', 'gsdg', '32453245']
     const paragrafsts = ['blabla bla 1', 'bla bla bla 2', 'asfa', 'gsdg', '32453245']
 
-    return(
-    <>
-        <Header paragraf={paragrafH}/>
-        <Apartats titols={titols} paragrafs={paragrafsts} keys={keys} />
-        <Footer titols={titols} keys={keys} />
-    </>
+    return (
+        <>
+            
+            <Routes>
+                <Route path="/" element={<><Header paragraf={paragrafH} /><Apartats titols={titols} paragrafs={paragrafsts} keys={keys} /></>} />
+                <Route path="/casa" element={<Casa titols={titols} keys={keys}  />} />
+            </Routes>
+            <Footer titols={titols} keys={keys} />
+        </>
     );
 }
 
