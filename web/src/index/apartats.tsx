@@ -7,6 +7,7 @@ import Menu from '../menu'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom/client';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -48,7 +49,9 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
         }
     };
 
-    return (
+    const root = ReactDOM.createRoot(document.getElementById('uncontrolled-tab-example'));
+    root.render(<Menu />);
+
         <div className='apartatss part'>
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
                 {nums.map((i) =>
@@ -62,7 +65,6 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
                     </Tab>
                 )}
             </Tabs>
-            <Menu />
         </div>
     );
 }

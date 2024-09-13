@@ -29,7 +29,14 @@ function Footer({titols, keys}:Props) {
     const es = url[1] == 'es';
     const fr = url[1] == 'fr';
     const en = url[1] == 'en';
-    const ca = (!es || !fr || !en) && !(url[1] == 'undefined');
+    const ca = (!es && !fr && !en);
+    console.log(ca)
+    var rr = 0;
+    for (let i = 0; i < celsNu; i++) {
+        if (url[i] == keys[i]) {
+            rr = i
+        }
+    }
 
 
     return (
@@ -59,13 +66,13 @@ function Footer({titols, keys}:Props) {
                 <div className="mitggasa"> <hr /> <span><img src={logo} alt="Logo Cansici" /></span> <hr /> </div>
                 <div className="sota">
                 <div id="menuF" className="menuF">
-            <button className="btttoF" id="btttoF" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+            <button className="btttoF" id={"btttoF text" + (rr + 1)} type="button" data-bs-toggle="dropdown" aria-expanded="false" >
                 Idiomes
             </button>
             <ul id="mmenu" className="dropdown-menu">
-                {ca ? <li><Link className="dropdown-item" to={'/' + url[-2]}><img src={BanseraCA} alt="Bandera" width={16} height={11} /> Catalá</Link></li> : '' }
+                {ca ? '' : <li><Link className="dropdown-item" to={'/' + url[-2]}><img src={BanseraCA} alt="Bandera" width={16} height={11} /> Catalá</Link></li> }
                 {es ? '' : <li><Link className="dropdown-item" to={'/es/' + url[-2]}><img src={BanseraES} alt="Bandera" width={16} height={11} />Español</Link></li> }
-                {fr ? '' : <li><Link className="dropdown-item" to={'/fr/' + url[-2]}><img src={BanseraFR} alt="Bandera" width={16} height={11} />French</Link></li> }
+                {fr ? '' : <li><Link className="dropdown-item" to={'/fr/' + url[-2]}><img src={BanseraFR} alt="Bandera" width={16} height={11} />François</Link></li> }
                 {en ? '' : <li><Link className="dropdown-item" to={'/en/' + url[-2]}><img src={BanseraEN} alt="Bandera" width={16} height={11} />English</Link></li> }
             </ul>
         </div>

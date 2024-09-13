@@ -44,7 +44,6 @@
 }
 .tab-content .textApartats {
     width: 99%;
-    
     border-radius: 10px;
     margin: calc(var(--dist-divs)-10px);
     padding: 10px;
@@ -53,6 +52,7 @@
 .textApartats p{
     padding-left: calc(var(--dist-p)/2);
     margin-left: var(--dist-p);
+    text-align: justify;
 }
 
 

@@ -1,14 +1,32 @@
-.apartatssM {
-    padding: 1em;
+#menuurubto {
+    margin-right: 1em;
 }
-
-#MenuuM {
-    width: 100%;
-    display: flex;
+.nanana {
     justify-content: space-between;
+}
+ul#MenuuM {
+    width: 100% !important;
+    display: flex !important;
     margin-bottom: 0 !important;
 }
-.apartatssM ul div{
+.apartatssM ul .lidivv{
     display: flex;
     flex-direction: row;
+}
+.textApartats {
+    padding-left: 4em;
+}
+.textApartats h3 {
+    padding-left: 1em;
+}
+.textApartats ul, .textApartats ol {
+    padding-left: 6em;
+}
+
+#uncontrolled-tab-example-tab-inici {
+    background-color: #ffffff9a;
+}
+#uncontrolled-tab-example-tab-inici a {
+    text-decoration: none;
+    color: #526877;
 }
