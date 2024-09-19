@@ -1,5 +1,6 @@
 //aixo tret de (https://react-bootstrap.netlify.app/docs/components/cards/#navigation)
 import './menu.css';
+import './menuMides.css'
 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -15,15 +16,14 @@ interface Props {
 
 };
 
-function Menu({  }: Props) {
+function Menu() {
     const [color, setColor] = useState<string>('#8fbc8f'); // Valor inicial
     const root = document.documentElement;;
 
     const url = window.location.pathname.split('/');
-    console.log(url);
-    const es = url[1] == 'es';
-    const fr = url[1] == 'fr';
-    const en = url[1] == 'en';
+    const es = url[1] === 'es';
+    const fr = url[1] === 'fr';
+    const en = url[1] === 'en';
     const ca = (!es || !fr || !en);
 
     var conttat = 0
@@ -40,8 +40,7 @@ function Menu({  }: Props) {
         };
 
     }, []);
-
-
+    
     const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         // Funció que s'executa quan es canvia el color
         const newColor = event.target.value;

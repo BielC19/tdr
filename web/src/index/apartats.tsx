@@ -27,9 +27,8 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
 
     useEffect(() => {
         cliquear();
-
-    }, []); // This effect runs only once when the component is mounted
-
+    }, []);
+    
 
     function cliquear() {
         const element = document.getElementById('uncontrolled-tab-example-tab-casa');
@@ -48,14 +47,11 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
             apartat.classList.add('text'+num);
         }
     };
-
-    const root = ReactDOM.createRoot(document.getElementById('uncontrolled-tab-example'));
-    root.render(<Menu />);
-
-        <div className='apartatss part'>
+    return (
+        <div className='apartatss part' id='apart4'>
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 apartats">
                 {nums.map((i) =>
-                    <Tab className={"apartat " + "ap" + i} eventKey={keys[i]} title={titols[i]} key={i}>
+                    <Tab className={"apartat ap" + i} eventKey={keys[i]} title={titols[i]} key={i}>
                         <div className="textApartats" id={'text' + (i+1)}>
                             <h3>{titols[i]}</h3>
                             <p>{paragrafs[i]}</p>
@@ -65,6 +61,7 @@ function Apartats({ titols, paragrafs, keys, imgs = [], imgA = [], imgT = [] }: 
                     </Tab>
                 )}
             </Tabs>
+                <Menu />
         </div>
     );
 }

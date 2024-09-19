@@ -14,13 +14,13 @@ interface Props {
 
 function Menuu({children, titols, keys}: Props) {
 
-    const tuleta = children
     const celsNu = titols.length;
     const nums = Array.from(Array(celsNu).keys());
     const url = window.location.pathname.split('/');
+
     var rr = 0;
     for (let i = 0; i < celsNu; i++) {
-        if (url[i] == keys[i]) {
+        if (url[1] === keys[i]) {
             rr = i
         }
     }
@@ -43,7 +43,7 @@ function Menuu({children, titols, keys}: Props) {
             <div className="tab-content">
                 <div role="tabpanel" id={"MeMenu uncontrolled-tab-example-tab-" + keys[rr]}  className={"fade apartat ap" + rr + " tab-pane active show"}>
                     <div className="textApartats" id={"text" + (rr + 1)}>
-                        {tuleta}
+                        {children}
                     </div>
                 </div>
             </div>

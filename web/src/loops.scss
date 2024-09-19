@@ -10,7 +10,7 @@
     --fons-apartat9: #fbff005d;
 }
 
-$keys: 'casa', 'entron', 'fotos', 'ubicacio', 'calendari', 'preus', 'reserves', 'normes';
+$keys: 'casa', 'entron', 'fotos', 'arribar', 'calendari', 'preus', 'reserves', 'normes';
 
 @for $i from 1 through length($keys) {
     $key: nth($keys, $i);

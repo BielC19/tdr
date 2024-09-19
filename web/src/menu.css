@@ -1,8 +1,6 @@
 .apartatss .menu {
-    position: absolute;
-    top: 675px;
+    position: static;
     margin-top: 0.5em;
-    right: 2em;
 }
 .actiu{
     -moz-animation: rotacioMenu .8s infinite linear;
